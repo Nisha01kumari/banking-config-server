@@ -12,7 +12,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000/auth-service
+          issuer-uri: http://localhost:9000
 
   data:
     redis:
@@ -54,8 +54,6 @@ spring:
            uri: lb://AUTH-SERVICE
            predicates:
              - path=/auth/**, /oauth2/**
-           filters:
-             - StripPrefix=1
          
 
             
