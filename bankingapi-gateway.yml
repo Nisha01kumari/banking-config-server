@@ -49,14 +49,11 @@ spring:
               args:
                 name: transactionCB
                 fallbackUri: forward:/fallback/transaction
-                
-         - id: auth-service
-           uri: lb://AUTH-SERVICE
-           predicates:
-             - path=/auth/**, /oauth2/**
-         
 
-            
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**, /oauth2/**
 
 eureka:
   client:
@@ -71,3 +68,8 @@ management:
           - health
           - info
           - prometheus
+
+  otlp:
+    metrics:
+      export:
+        enabled: false
