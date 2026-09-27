@@ -5,8 +5,7 @@ spring:
   application:
     name: bankingapi-gateway
 
-  profiles:
-    active: dev
+  
 
   security:
     oauth2:
