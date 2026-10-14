@@ -53,8 +53,9 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**, /oauth2/**
+            
         - id: customer-service
-          uri: Ib://CUSTOMER-SERVICE
+          uri: lb://CUSTOMER-SERVICE
           predicates:
              - Path=/api/customers/**
           filters:
